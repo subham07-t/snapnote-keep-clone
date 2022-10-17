@@ -37,7 +37,7 @@
 }
 .note-box {
   width: 250px;
-  height: 250px;
+  height: 200px;
   border: 2px solid #5f6368;
   border-radius: 25px;
   padding: 20px 15px;
@@ -75,11 +75,10 @@
   flex-direction: column;
   gap: 8px;
   position: absolute;
-  right: 57.5%;
-  bottom: 59.5%;
+  top: 195px;
   transform: scale(0);
   transition: transform 0.2s ease;
-  transform-origin: bottom right;
+  transform-origin: bottom left;
 }
 .menu li {
   display: flex;
@@ -87,7 +86,7 @@
   align-items: center;
   cursor: pointer;
 }
-.settings:hover .menu {
+.settings.show .menu {
   transform: scale(1);
 }
 .popup-box {
@@ -109,9 +108,14 @@
   border-radius: 25px;
   z-index: 3;
   /* background-color: aqua; */
-  transition: all 0.5s ease;
+  transition: all 0.2s ease;
 }
-
+.popup-box,
+.notebox-popup {
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0s ease;
+}
 .notebox-popup header {
   display: flex;
   justify-content: space-between;
