@@ -1,0 +1,119 @@
+.sidebar-bot {
+  margin-top: 15px;
+  /* border: 2px solid #5f6368; */
+}
+.todo {
+  border: 2px solid #5f6368;
+  border-radius: 25px;
+  padding: 40px 20px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.task-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.task-input i {
+  position: absolute;
+  transform: translateX(-130px);
+}
+.task-input input {
+  outline: none;
+  border: 1px solid #5f6368;
+  border-radius: 8px;
+  width: 100%;
+  padding: 8px 2.5rem;
+  height: 50px;
+}
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+}
+.controls button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.controls button:hover {
+  color: #757d86;
+}
+.filters {
+  display: flex;
+  gap: 8px;
+}
+.filters span {
+  cursor: pointer;
+}
+.task-box {
+  padding: 5px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.task-box li {
+  list-style: none;
+  /* border: 2px solid #5f6368; */
+}
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.task label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+label input[type="checkbox"] {
+  cursor: pointer;
+}
+
+.menu-todo {
+  display: none;
+}
+.settings-todo {
+  cursor: pointer;
+}
+.menu-todo {
+  border: 1px solid #5f6368;
+  list-style: none;
+  padding: 8px 16px;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: absolute;
+  top: 330px;
+  transform: scale(0);
+  transition: transform 0.2s ease;
+  transform-origin: bottom left;
+}
+.menu-todo li {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  cursor: pointer;
+}
+.settings-todo:hover .menu-todo {
+  transform: scale(1);
+}
+.drag-icon {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.task-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+  /* border: 2px solid #5f6368; */
+}

@@ -1,21 +1,22 @@
 .sidebar {
   width: 25%;
-  /* background-color: coral; */
   padding: 20px;
+  /* border: 2px solid #5f6368; */
 }
 .sidebar-top {
   display: flex;
   gap: 8px;
+  /* border: 2px solid #5f6368; */
 }
 .content {
   width: calc(100% - 25%);
-  /* background-color: cornflowerblue; */
   padding: 20px 40px;
   display: flex;
   flex-wrap: wrap;
   column-gap: 16px;
   row-gap: 12px;
-  align-items: center;
+  align-items: flex-start;
+  /* border: 2px solid #5f6368; */
 }
 
 .add-box {

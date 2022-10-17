@@ -7,8 +7,10 @@
     <title>Keep_Clone</title>
     <link rel="stylesheet" href="CSS/style.css" />
     <link rel="stylesheet" href="CSS/addNote.css" />
+    <link rel="stylesheet" href="CSS/addToDo.css" />
     <script src="JS/script.js" defer></script>
     <script src="JS/addNote.js" defer></script>
+    <script src="JS/addToDo.js" defer></script>
     <script
       src="https://kit.fontawesome.com/3413b515e1.js"
       crossorigin="anonymous"
@@ -96,6 +98,85 @@
           </div>
           <div class="sidebar-bot">
             <!-- Adding a to-do list -->
+            <div class="todo">
+              <div class="task-input">
+                <i class="fas fa-list-ul"></i>
+                <input type="text" placeholder="Add a new task" />
+              </div>
+              <div class="controls">
+                <div class="filters">
+                  <span id="all">All</span>
+                  <span id="pending">Pending</span>
+                  <span id="completed">Completed</span>
+                </div>
+                <button class="clear">Clear all</button>
+              </div>
+              <ul class="task-box">
+                <li class="task">
+                  <div class="task-left">
+                    <!-- <span class="drag-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1em"
+                        height="1em"
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 24 24"
+                      >
+                        <g fill="none" stroke="white" stroke-width="2">
+                          <circle
+                            cx="8"
+                            cy="4"
+                            r="1"
+                            transform="rotate(90 8 4)"
+                          />
+                          <circle
+                            cx="16"
+                            cy="4"
+                            r="1"
+                            transform="rotate(90 16 4)"
+                          />
+                          <circle
+                            cx="8"
+                            cy="12"
+                            r="1"
+                            transform="rotate(90 8 12)"
+                          />
+                          <circle
+                            cx="16"
+                            cy="12"
+                            r="1"
+                            transform="rotate(90 16 12)"
+                          />
+                          <circle
+                            cx="8"
+                            cy="20"
+                            r="1"
+                            transform="rotate(90 8 20)"
+                          />
+                          <circle
+                            cx="16"
+                            cy="20"
+                            r="1"
+                            transform="rotate(90 16 20)"
+                          />
+                        </g>
+                      </svg>
+                    </span> -->
+                    <label for="1">
+                      <input type="checkbox" id="1" />
+                      <p>Hello world</p>
+                    </label>
+                  </div>
+                  <div class="settings-todo">
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                    <ul class="menu-todo">
+                      <li><i class="fas fa-pen"></i>Edit</li>
+                      <li><i class="fas fa-trash-alt"></i>Delete</li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
         <!-- Content -->
