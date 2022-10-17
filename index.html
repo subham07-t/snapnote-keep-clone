@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Keep_Clone</title>
     <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="stylesheet" href="CSS/addNote.css" />
     <script src="JS/script.js" defer></script>
+    <script src="JS/addNote.js" defer></script>
     <script
       src="https://kit.fontawesome.com/3413b515e1.js"
       crossorigin="anonymous"
@@ -14,6 +16,7 @@
   </head>
   <body>
     <div class="container">
+      <!-- Navbar start -->
       <nav class="navbar">
         <div class="navbar-logo">
           <img src="images/icons8-yellow-file-64.png" alt="" />
@@ -34,17 +37,93 @@
         </p>
         <ul class="link-list">
           <li>
-            <a href="">
+            <a href="https://github.com/subham07-t" target="_blank">
               <i class="fab fa-github"></i>
             </a>
           </li>
           <li>
-            <a href="">
+            <a
+              href="https://www.linkedin.com/in/subham-haldar-a83672213/"
+              target="_blank"
+            >
               <i class="fa-brands fa-linkedin"></i>
             </a>
           </li>
         </ul>
       </div>
+      <!-- Navbar finished -->
+
+      <!-- Main body start -->
+      <div class="main">
+        <!-- popup box for taking note -->
+        <div class="popup-box">
+          <div class="notebox-popup">
+            <header>
+              <h2>Add a new Note</h2>
+              <i class="fas fa-times"></i>
+            </header>
+            <form action="#">
+              <div class="title">
+                <label>Title</label>
+                <input type="text" />
+              </div>
+              <div class="description">
+                <label>Description</label>
+                <textarea></textarea>
+              </div>
+              <button>Add Note</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+          <div class="sidebar-top">
+            <!-- Adding a Note -->
+            <div class="add-box">
+              <div class="icon">
+                <i class="far fa-plus"></i>
+              </div>
+              <p>Add a Note</p>
+            </div>
+            <!-- Adding a Drawing box -->
+            <div class="add-box">
+              <div class="icon">
+                <i class="fas fa-paint-brush"></i>
+              </div>
+              <p>Note with Drawing</p>
+            </div>
+          </div>
+          <div class="sidebar-bot">
+            <!-- Adding a to-do list -->
+          </div>
+        </div>
+        <!-- Content -->
+        <div class="content">
+          <!-- Note card start -->
+          <li class="note-box">
+            <h3>This is Title</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et,
+              expedita! Quis autem placeat at esse quas? Enim, sed laboriosam
+              exercitationem, voluptatem obcaecati ea mollitia modi id amet
+              adipisci quidem tenetur, porro quas.
+            </p>
+            <div class="note-box-bottom">
+              <p>oct 15,2022</p>
+              <div class="settings">
+                <i class="fas fa-ellipsis-h"></i>
+                <ul class="menu">
+                  <li><i class="fas fa-pen"></i>Edit</li>
+                  <li><i class="fas fa-trash-alt"></i>Delete</li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <!-- Note card finished -->
+        </div>
+      </div>
+      <!-- Main body Finished -->
     </div>
   </body>
 </html>

@@ -1,0 +1,158 @@
+.sidebar {
+  width: 25%;
+  /* background-color: coral; */
+  padding: 20px;
+}
+.sidebar-top {
+  display: flex;
+  gap: 8px;
+}
+.content {
+  width: calc(100% - 25%);
+  /* background-color: cornflowerblue; */
+  padding: 20px 40px;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 16px;
+  row-gap: 12px;
+  align-items: center;
+}
+
+.add-box {
+  padding: 15px 10px;
+  width: 50%;
+  border: 2px solid #5f6368;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+.icon {
+  border: 2px dashed #5f6368;
+  border-radius: 100%;
+  padding: 15px;
+}
+.note-box {
+  width: 250px;
+  height: 250px;
+  border: 2px solid #5f6368;
+  border-radius: 25px;
+  padding: 20px 15px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.note-box p {
+  /* display: flex; */
+  flex: 1;
+  font-size: 14px;
+  padding: 10px 0px 0px 0px;
+  overflow: auto;
+}
+.note-box p::-webkit-scrollbar {
+  display: none;
+}
+.note-box-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 5px 0px 5px;
+  border-top: 1px solid #5f6368;
+}
+.settings {
+  cursor: pointer;
+}
+.menu {
+  border: 1px solid #5f6368;
+  list-style: none;
+  padding: 8px 16px;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: absolute;
+  right: 57.5%;
+  bottom: 59.5%;
+  transform: scale(0);
+  transition: transform 0.2s ease;
+  transform-origin: bottom right;
+}
+.menu li {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  cursor: pointer;
+}
+.settings:hover .menu {
+  transform: scale(1);
+}
+.popup-box {
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+.notebox-popup {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid #5f6368;
+  width: 500px;
+  height: 450px;
+  border-radius: 25px;
+  z-index: 3;
+  /* background-color: aqua; */
+  transition: all 0.5s ease;
+}
+
+.notebox-popup header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10px;
+  margin: 10px 10px 0 10px;
+}
+.notebox-popup header i {
+  cursor: pointer;
+}
+form {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 0px 10px 0px 10px;
+}
+form .title,
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+form :where(input, textarea) {
+  outline: none;
+  border: 1px solid #5f6368;
+  border-radius: 8px;
+  width: 100%;
+  padding: 8px;
+  height: 50px;
+}
+form :where(textarea) {
+  height: 140px;
+}
+
+form button {
+  height: 50px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+form button:hover {
+  background-color: #5f6368;
+}
