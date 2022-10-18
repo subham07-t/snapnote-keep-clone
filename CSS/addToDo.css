@@ -10,9 +10,8 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
-  overflow: auto;
 }
-.todo::-webkit-scrollbar {
+.task-box::-webkit-scrollbar {
   display: none;
 }
 .task-input {
@@ -37,6 +36,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 8px 10px;
+  /* background-color: crimson; */
 }
 .controls button {
   outline: none;
@@ -62,10 +62,12 @@
   padding: 5px 15px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   gap: 12px;
-  margin-bottom: 15px;
-  margin-top: 1px;
+  /* margin-bottom: 1px;
+  margin-top: 50px; */
+  overflow-y: auto;
+  /* background-color: aqua; */
 }
 .task-box li {
   list-style: none;
