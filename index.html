@@ -8,9 +8,11 @@
     <link rel="stylesheet" href="CSS/style.css" />
     <link rel="stylesheet" href="CSS/addNote.css" />
     <link rel="stylesheet" href="CSS/addToDo.css" />
+    <link rel="stylesheet" href="CSS/addDraw.css" />
     <script src="JS/script.js" defer></script>
     <script src="JS/addNote.js" defer></script>
     <script src="JS/addToDo.js" defer></script>
+    <script src="JS/addDraw.js" defer></script>
     <script
       src="https://kit.fontawesome.com/3413b515e1.js"
       crossorigin="anonymous"
@@ -78,6 +80,45 @@
           </div>
         </div>
 
+        <!-- popup box for taking note as a drawing -->
+
+        <div class="canvas-popup-box">
+          <div class="drawbox-popup">
+            <header>
+              <h2>Add a new canvas</h2>
+              <i class="fas fa-times"></i>
+            </header>
+            <section>
+              <div class="tools-board">
+                <ul class="options">
+                  <li class="option">
+                    <i class="fa-regular fa-square"></i>
+                    <span>Rectangle</span>
+                  </li>
+                  <li class="option">
+                    <img src="/images/triangle.png" alt="" />
+                    <span>Triangle</span>
+                  </li>
+                  <li class="option">
+                    <i class="fa-regular fa-circle"></i>
+                    <span>Circle</span>
+                  </li>
+                  <li class="option">
+                    <span>Rectangle</span>
+                  </li>
+                  <li class="option">
+                    <span>Rectangle</span>
+                  </li>
+                  <li class="option">
+                    <span>Rectangle</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="canvas">Hello</div>
+            </section>
+          </div>
+        </div>
+
         <!-- Sidebar -->
         <div class="sidebar">
           <div class="sidebar-top">
@@ -89,7 +130,7 @@
               <p>Add a Note</p>
             </div>
             <!-- Adding a Drawing box -->
-            <div class="add-box">
+            <div class="add-box2">
               <div class="icon">
                 <i class="fas fa-paint-brush"></i>
               </div>
