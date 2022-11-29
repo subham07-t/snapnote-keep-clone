@@ -31,12 +31,6 @@
   display: flex;
   flex-direction: column;
 }
-.canvas-popup-box,
-.drawbox-popup {
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0s ease;
-}
 .drawbox-popup header i {
   cursor: pointer;
 }
@@ -44,7 +38,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 10px;
+  padding: 20px 20px;
   /* margin: 10px 10px 0 10px; */
 }
 .drawbox-popup section {
@@ -52,14 +46,105 @@
   width: 100%;
   flex: 1;
 }
+.canvas-popup-box,
+.drawbox-popup {
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0s ease;
+}
 .tools-board {
-  background-color: red;
   width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.row-shapes,
+.row-options,
+.row-colors,
+.row-buttons {
+  padding: 10px;
+}
+.row-colors ul {
+  display: flex;
+  justify-content: space-between;
+}
+.row-colors .option {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  margin-top: 3px;
+  position: relative;
+}
+.row-colors .option:nth-child(1) {
+  background-color: #000;
+}
+.row-colors .option:nth-child(2) {
+  background-color: #e02020;
+}
+.row-colors .option:nth-child(3) {
+  background-color: #6dd400;
+}
+.row-colors .option:nth-child(4) {
+  background-color: #4a98f7;
+}
+.row-colors .option.selected::before {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  height: 12px;
+  width: 12px;
+  background: inherit;
+  border-radius: inherit;
+  border: 2px solid #fff;
+  transform: translate(-50%, -50%);
+}
+.row-colors .option:first-child.selected::before {
+  border-color: #ccc;
+}
+.option #color-picker {
+  opacity: 0;
+  cursor: pointer;
+}
+.row-buttons {
+  display: flex;
+  justify-content: space-around;
+  gap: 3px;
+}
+.row-buttons button {
+  padding: 5px 5px;
+  width: 50%;
+  border: 2px solid #5f6368;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.options {
+  list-style: none;
+  padding: 10px;
+}
+.option {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+.option #fill-color {
+  width: 14px;
+  height: 14px;
+}
+.option #size-slider {
+  width: 100%;
+  height: 4px;
+  margin-top: 10px;
+}
+.fa-play {
+  transform: rotate(30deg);
 }
 .canvas {
   background-color: #fff;
   width: 100%;
-}
-.options {
-  list-style: none;
 }

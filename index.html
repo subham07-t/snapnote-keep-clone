@@ -90,29 +90,58 @@
             </header>
             <section>
               <div class="tools-board">
-                <ul class="options">
-                  <li class="option">
-                    <i class="fa-regular fa-square"></i>
-                    <span>Rectangle</span>
-                  </li>
-                  <li class="option">
-                    <img src="/images/triangle.png" alt="" />
-                    <span>Triangle</span>
-                  </li>
-                  <li class="option">
-                    <i class="fa-regular fa-circle"></i>
-                    <span>Circle</span>
-                  </li>
-                  <li class="option">
-                    <span>Rectangle</span>
-                  </li>
-                  <li class="option">
-                    <span>Rectangle</span>
-                  </li>
-                  <li class="option">
-                    <span>Rectangle</span>
-                  </li>
-                </ul>
+                <div class="row-shapes">
+                  <label>Shapes</label>
+                  <ul class="options">
+                    <li class="option">
+                      <i class="fa-solid fa-square"></i>
+                      <span>Rectangle</span>
+                    </li>
+                    <li class="option">
+                      <i class="fa-solid fa-play"></i>
+                      <span>Triangle</span>
+                    </li>
+                    <li class="option">
+                      <i class="fa-solid fa-circle"></i>
+                      <span>Circle</span>
+                    </li>
+                    <li class="option">
+                      <input type="checkbox" id="fill-color" />
+                      <label for="fill-color">Fill color</label>
+                    </li>
+                  </ul>
+                </div>
+                <div class="row-options">
+                  <label>Options</label>
+                  <ul class="options">
+                    <li class="option">
+                      <i class="fa-solid fa-paintbrush"></i>
+                      <span>Brush</span>
+                    </li>
+                    <li class="option">
+                      <i class="fa-solid fa-eraser"></i>
+                      <span>Eraser</span>
+                    </li>
+                    <li class="option">
+                      <input type="range" id="size-slider" />
+                    </li>
+                  </ul>
+                </div>
+                <div class="row-colors">
+                  <label>Colors</label>
+                  <ul class="options">
+                    <li class="option selected"></li>
+                    <li class="option"></li>
+                    <li class="option"></li>
+                    <li class="option">
+                      <input type="color" id="color-picker" value="#4A98F7" />
+                    </li>
+                  </ul>
+                </div>
+                <div class="row-buttons">
+                  <button>Clear</button>
+                  <button>Add</button>
+                </div>
               </div>
               <div class="canvas">Hello</div>
             </section>
