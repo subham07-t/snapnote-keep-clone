@@ -93,19 +93,19 @@
                 <div class="row-shapes">
                   <label>Shapes</label>
                   <ul class="options">
-                    <li class="option">
+                    <li class="option tool" id="rectangle">
                       <i class="fa-solid fa-square"></i>
                       <span>Rectangle</span>
                     </li>
-                    <li class="option">
+                    <li class="option tool" id="triangle">
                       <i class="fa-solid fa-play"></i>
                       <span>Triangle</span>
                     </li>
-                    <li class="option">
+                    <li class="option tool" id="circle">
                       <i class="fa-solid fa-circle"></i>
                       <span>Circle</span>
                     </li>
-                    <li class="option">
+                    <li class="option tool">
                       <input type="checkbox" id="fill-color" />
                       <label for="fill-color">Fill color</label>
                     </li>
@@ -114,16 +114,22 @@
                 <div class="row-options">
                   <label>Options</label>
                   <ul class="options">
-                    <li class="option">
+                    <li class="option active tool" id="brush">
                       <i class="fa-solid fa-paintbrush"></i>
                       <span>Brush</span>
                     </li>
-                    <li class="option">
+                    <li class="option tool" id="eraser">
                       <i class="fa-solid fa-eraser"></i>
                       <span>Eraser</span>
                     </li>
                     <li class="option">
-                      <input type="range" id="size-slider" />
+                      <input
+                        type="range"
+                        id="size-slider"
+                        min="1"
+                        max="30"
+                        value="5"
+                      />
                     </li>
                   </ul>
                 </div>
@@ -139,11 +145,13 @@
                   </ul>
                 </div>
                 <div class="row-buttons">
-                  <button>Clear</button>
-                  <button>Add</button>
+                  <button class="clear-canvas">Clear</button>
+                  <button class="add-img">Add</button>
                 </div>
               </div>
-              <div class="canvas">Hello</div>
+              <div class="canvas">
+                <canvas></canvas>
+              </div>
             </section>
           </div>
         </div>
