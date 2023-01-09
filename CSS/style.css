@@ -41,8 +41,8 @@
 .account-info {
   border: 2px solid #5f6368;
   border-radius: 20px;
-  width: 300px;
-  height: 200px;
+  width: 350px;
+  height: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -74,10 +74,27 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 10px;
+  /* margin-top: 10px; */
+  margin: 0px 10px;
   width: 15%;
 }
 .main {
   display: flex;
   /* border: 2px solid #5f6368; */
+}
+@media (max-width: 600px) {
+  .main {
+    flex-direction: column;
+    height: 100%;
+  }
+  .main ::-webkit-scrollbar {
+    display: none;
+  }
+  .account-info p {
+    text-align: center;
+    font-size: 11px;
+  }
+  .account-info {
+    width: 300px;
+  }
 }

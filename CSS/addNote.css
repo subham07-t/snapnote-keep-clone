@@ -148,3 +148,26 @@ form button {
 form button:hover {
   background-color: #5f6368;
 }
+@media (max-width: 600px) {
+  .sidebar {
+    width: 100%;
+  }
+  .notebox-popup {
+    width: 350px;
+    height: 450px;
+  }
+  .content {
+    width: 100%;
+    padding: 20px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    row-gap: 12px;
+  }
+  .data-box {
+    width: 100%;
+  }
+  .content ::-webkit-scrollbar {
+    display: none;
+  }
+}

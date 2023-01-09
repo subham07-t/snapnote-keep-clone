@@ -147,3 +147,8 @@ label input[type="checkbox"] {
 .empty {
   color: #757d86;
 }
+@media (max-width: 600px) {
+  .todo {
+    height: 300px;
+  }
+}
