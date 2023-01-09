@@ -66,11 +66,8 @@ function showTodos(filterId) {
                             </label>
                         </div>
                         <div class="settings-todo">
-                            <i onclick="showTodoMenu(this)" class="fa-solid fa-ellipsis-vertical"></i>
-                            <ul class="menu-todo">
-                                <li onclick="editTask(${index},'${todo.task}','${todo.status}','${filterId}')"><i class="fas fa-pen"></i>Edit</li>
-                                <li onclick="deleteTask(${index},'${filterId}')"><i class="fas fa-trash-alt"></i>Delete</li>
-                            </ul>
+                                <i onclick="editTask(${index},'${todo.task}','${todo.status}','${filterId}')" class="fas fa-pen"></i>
+                                <i onclick="deleteTask(${index},'${filterId}')" class="fas fa-trash-alt"></i>
                         </div>
                     </li>`;
       }

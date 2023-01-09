@@ -100,7 +100,11 @@ label input[type="checkbox"] {
 }
 .settings-todo {
   cursor: pointer;
+  display: flex;
+  gap: 12px;
+  width: 35px;
 }
+
 .menu-todo {
   border: 1px solid #5f6368;
   list-style: none;

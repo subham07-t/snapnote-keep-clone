@@ -159,3 +159,6 @@
   height: 100%;
   background-color: #fff;
 }
+.data-box img {
+  border-radius: 15px;
+}

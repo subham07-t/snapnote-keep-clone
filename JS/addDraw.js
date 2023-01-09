@@ -1,8 +1,9 @@
 const canvasPopupBox = document.querySelector(".canvas-popup-box");
 const drawBoxPopup = document.querySelector(".drawbox-popup");
+const drawBoxPopupTitle = drawBoxPopup.querySelector("header h2");
 const addCanvasBtn = document.querySelector(".add-box2");
 const canvasCloseIcon = document.querySelector(".drawbox-popup header i");
-
+let isCanvasUpdate = false;
 addCanvasBtn.addEventListener("click", () => {
   canvasPopupBox.style.opacity = "1";
   drawBoxPopup.style.opacity = "1";
@@ -11,10 +12,14 @@ addCanvasBtn.addEventListener("click", () => {
 });
 
 canvasCloseIcon.addEventListener("click", () => {
+  isCanvasUpdate = false;
   canvasPopupBox.style.opacity = "0";
   drawBoxPopup.style.opacity = "0";
   canvasPopupBox.style.pointerEvents = "none";
   drawBoxPopup.style.pointerEvents = "none";
+  clearCanvas.click();
+  drawBoxPopupTitle.innerText = "Add a New Canvas";
+  addImg.innerText = "Add";
 });
 
 // code for drawing
@@ -129,16 +134,47 @@ colorPicker.addEventListener("change", () => {
   colorPicker.parentElement.style.background = colorPicker.value;
   colorPicker.parentElement.click();
 });
+
+let idGenerate = () => {
+  let res = () => {
+    return Math.floor((1 + Math.random()) * 0x10000)
+      .toString(16)
+      .substring(1);
+  };
+  return res() + res();
+};
+
+addImg.addEventListener("click", () => {
+  let id = idGenerate();
+  let dateObj = new Date(),
+    month = dateObj.toLocaleString("default", { month: "long" }),
+    day = dateObj.getDate(),
+    year = dateObj.getFullYear();
+  let dataURI = canvas.toDataURL();
+  // store all the required value in a object
+  let imageInfo = {
+    type: "image",
+    id: id,
+    dataURI: dataURI,
+    date: `${month} ${day}, ${year}`,
+  };
+  if (!isCanvasUpdate) {
+    allData.push(imageInfo);
+  } else {
+    isCanvasUpdate = false;
+    allData[updateId] = imageInfo;
+  }
+
+  localStorage.setItem("allData", JSON.stringify(allData));
+  canvasCloseIcon.click();
+  showAllData();
+});
+
 clearCanvas.addEventListener("click", () => {
   ctx.clearRect(0, 0, canvas.width, canvas.height); // clearing whole canvas
   setCanvasBackground();
 });
-addImg.addEventListener("click", () => {
-  const link = document.createElement("a");
-  link.download = `${Date.now()}.jpg`;
-  link.href = canvas.toDataURL();
-  link.click();
-});
+
 sizeSlider.addEventListener("change", () => (brushWidth = sizeSlider.value));
 canvas.addEventListener("mousedown", startDrawing);
 canvas.addEventListener("mousemove", drawing);

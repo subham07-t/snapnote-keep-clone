@@ -11,12 +11,11 @@ const addNoteBtn = document.querySelector(".add-box");
 // content body
 const contentBody = document.querySelector(".content");
 // notes array & other variables declaring
-const notes = JSON.parse(localStorage.getItem("notes") || "[]");
+const allData = JSON.parse(localStorage.getItem("allData") || "[]");
 let isUpdate = false,
   updateId;
 // calling the notes for render when screen loading
-showNotes();
-
+showAllData();
 // event calling for open the note popupbox
 addNoteBtn.addEventListener("click", () => {
   popupBox.style.opacity = "1";
@@ -54,6 +53,7 @@ subNoteBtn.addEventListener("click", (e) => {
 
     // store all the required value in a object
     let noteInfo = {
+      type: "note",
       title: noteTitle,
       description: noteDesc,
       date: `${month} ${day}, ${year}`,
@@ -61,59 +61,73 @@ subNoteBtn.addEventListener("click", (e) => {
 
     //checking update popup open or normal
     if (!isUpdate) {
-      notes.push(noteInfo);
+      allData.push(noteInfo);
     } else {
       isUpdate = false;
-      notes[updateId] = noteInfo;
+      allData[updateId] = noteInfo;
     }
 
-    localStorage.setItem("notes", JSON.stringify(notes));
+    // localStorage.setItem("notes", JSON.stringify(notes));
+    localStorage.setItem("allData", JSON.stringify(allData));
     closeIcon.click();
-    showNotes();
+    showAllData();
   }
 });
 
 // function to show notes on screen
-function showNotes() {
-  document.querySelectorAll(".note-box").forEach((note) => {
-    note.remove();
+function showAllData() {
+  document.querySelectorAll(".data-box").forEach((data) => {
+    data.remove();
   });
-  notes.forEach((note, index) => {
-    const noteCard = `<li class="note-box">
-                          <h3>${note.title}</h3>
-                          <p>
-                            ${note.description}
-                          </p>
-                          <div class="note-box-bottom">
-                            <p>${note.date}</p>
-                            <div class="settings">
-                              <i onclick="showMenu(this)" class="fas fa-ellipsis-h"></i>
-                              <ul class="menu">
-                                <li onclick="editNote(${index},'${note.title}','${note.description}')"><i class="fas fa-pen"></i>Edit</li>
-                                <li onclick='deleteNote(${index})'><i class="fas fa-trash-alt"></i>Delete</li>
-                              </ul>
-                            </div>
-                          </div>
-                        </li>`;
-    contentBody.insertAdjacentHTML("beforeend", noteCard);
-  });
-}
 
-// function for open menu
-function showMenu(elem) {
-  elem.parentElement.classList.add("show");
-  document.addEventListener("click", (e) => {
-    if (e.target.tagName != "I" || e.target != elem) {
-      elem.parentElement.classList.remove("show");
+  allData.forEach((data, index) => {
+    if (data.type === "note") {
+      const noteCard = `<li class="data-box">
+      <h3>${data.title}</h3>
+      <p>
+        ${data.description}
+      </p>
+      <div class="note-box-bottom">
+        <p>${data.date}</p>
+        <div class="settings">
+            <i onclick="editNote(${index},'${data.title}','${data.description}')" class="fas fa-pen"></i>
+            <i onclick='deleteData(${index})' class="fas fa-trash-alt"></i>
+        </div>
+      </div>
+    </li>`;
+      contentBody.insertAdjacentHTML("beforeend", noteCard);
+    } else {
+      const imageCard = `<li class="data-box">
+      <img src=${data.dataURI} alt="">
+      <div class="image-box-bottom">
+        <p>${data.date}</p>
+        <div class="settings">
+          <i onclick="editImage(${index},'${data.dataURI}')"class="fas fa-pen"></i>
+          <i onclick='deleteData(${index})' class="fas fa-trash-alt"></i>
+        </div>
+      </div>
+    </li>`;
+      contentBody.insertAdjacentHTML("beforeend", imageCard);
     }
   });
 }
 
+// function for open menu
+// function showMenu(elem) {
+//   console.log("elem", elem.parentElement);
+//   elem.parentElement.classList.add("show");
+//   document.addEventListener("click", (e) => {
+//     if (e.target.tagName != "I" || e.target != elem) {
+//       elem.parentElement.classList.remove("show");
+//     }
+//   });
+// }
+
 // function for delete note
-function deleteNote(id) {
-  notes.splice(id, 1);
-  localStorage.setItem("notes", JSON.stringify(notes));
-  showNotes();
+function deleteData(id) {
+  allData.splice(id, 1);
+  localStorage.setItem("allData", JSON.stringify(allData));
+  showAllData();
 }
 
 // function for edit note
@@ -125,4 +139,18 @@ function editNote(id, title, desc) {
   subNoteBtn.innerText = "Update Note";
   titleTag.value = title;
   descTag.value = desc;
+}
+
+// function for edit canvas
+function editImage(id, dataURL) {
+  isCanvasUpdate = true;
+  updateId = id;
+  addCanvasBtn.click();
+  drawBoxPopupTitle.innerText = "Update Canvas";
+  addImg.innerText = "Update";
+  var imageObj = new Image();
+  imageObj.onload = function () {
+    ctx.drawImage(this, 0, 0);
+  };
+  imageObj.src = dataURL;
 }

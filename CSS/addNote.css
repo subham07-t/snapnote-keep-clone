@@ -10,11 +10,10 @@
 }
 .content {
   width: calc(100% - 25%);
-  padding: 20px 40px;
+  padding: 20px 0px;
   display: flex;
   flex-wrap: wrap;
   column-gap: 16px;
-  row-gap: 12px;
   align-items: flex-start;
   /* border: 2px solid #5f6368; */
 }
@@ -36,9 +35,9 @@
   border-radius: 100%;
   padding: 15px;
 }
-.note-box {
+.data-box {
   width: 250px;
-  height: 200px;
+  height: 220px;
   border: 2px solid #5f6368;
   border-radius: 25px;
   padding: 20px 15px;
@@ -47,49 +46,37 @@
   flex-direction: column;
   gap: 8px;
 }
-.note-box p {
+.data-box p {
   /* display: flex; */
   flex: 1;
   font-size: 14px;
   padding: 10px 0px 0px 0px;
   overflow: auto;
 }
-.note-box p::-webkit-scrollbar {
+.data-box p::-webkit-scrollbar {
   display: none;
 }
 .note-box-bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 5px 0px 5px;
-  border-top: 1px solid #5f6368;
+  padding: 0px 5px 5px 5px;
+  /* border-top: 1px solid #5f6368; */
+  transform: translateY(8px);
+}
+.image-box-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 5px 5px 5px;
+  /* border-top: 1px solid #5f6368; */
 }
 .settings {
   cursor: pointer;
-}
-.menu {
-  border: 1px solid #5f6368;
-  list-style: none;
-  padding: 8px 16px;
-  width: 100px;
   display: flex;
-  flex-direction: column;
-  gap: 8px;
-  position: absolute;
-  top: 195px;
-  transform: scale(0);
-  transition: transform 0.2s ease;
-  transform-origin: bottom left;
+  gap: 18px;
 }
-.menu li {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  cursor: pointer;
-}
-.settings.show .menu {
-  transform: scale(1);
-}
+
 .popup-box {
   background-color: rgba(0, 0, 0, 0.4);
   position: fixed;

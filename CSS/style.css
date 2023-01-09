@@ -42,6 +42,7 @@
   border: 2px solid #5f6368;
   border-radius: 20px;
   width: 300px;
+  height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -49,7 +50,7 @@
   padding: 20px;
   gap: 10px;
   position: absolute;
-  top: 9%;
+  top: 8%;
   right: 2%;
   opacity: 0;
   transition: all 0.5s ease;
@@ -63,8 +64,8 @@
   font-size: 13px;
 }
 .account-info img {
-  width: 100px;
-  height: 100px;
+  width: 60px;
+  height: 60px;
   border-radius: 100%;
   border: 1px solid #5f6368;
 }
@@ -73,7 +74,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 20px;
+  margin-top: 10px;
   width: 15%;
 }
 .main {
