@@ -10,12 +10,13 @@
 }
 .content {
   width: calc(100% - 25%);
-  padding: 20px 0px;
+  padding: 20px 14px;
   display: flex;
   flex-wrap: wrap;
-  column-gap: 16px;
+  column-gap: 35px;
   align-items: flex-start;
   /* border: 2px solid #5f6368; */
+  align-content: flex-start;
 }
 
 .add-box {
@@ -45,6 +46,7 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
+  margin-bottom: 1rem;
 }
 .data-box p {
   /* display: flex; */
@@ -84,10 +86,12 @@
   height: 100%;
   z-index: 2;
   transition: all 0.3s ease;
+  top: 0;
+  left: 0;
 }
 .notebox-popup {
   position: absolute;
-  top: 40%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   border: 2px solid #5f6368;
@@ -169,5 +173,8 @@ form button:hover {
   }
   .content ::-webkit-scrollbar {
     display: none;
+  }
+  .data-box img {
+    height: 80%;
   }
 }
