@@ -108,7 +108,7 @@
   opacity: 0;
   cursor: pointer;
 }
-.option:is(:hover, .active) :where(span, label) {
+.option:is(:hover, .active) :where(span) {
   color: #4a98f7;
 }
 .option:is(:hover, .active) :where(i) {
@@ -133,7 +133,8 @@
   list-style: none;
   padding: 10px;
 }
-.option {
+.option,
+.fill-color {
   padding: 10px;
   display: flex;
   align-items: center;
@@ -150,7 +151,7 @@
   margin-top: 10px;
 }
 .fa-play {
-  transform: rotate(30deg);
+  transform: rotate(32deg);
 }
 .canvas {
   background-color: #fff;
@@ -198,7 +199,7 @@
   .row-shapes label {
     display: none;
   }
-  .row-shapes li.option.tool:last-child label {
+  div.row-shapes ul.options li.option.tool:last-child span {
     display: unset;
   }
   .row-options {

@@ -25,6 +25,7 @@ canvasCloseIcon.addEventListener("click", () => {
 // code for drawing
 const canvas = document.querySelector("canvas");
 const toolBtns = document.querySelectorAll(".tool");
+const fillColorLi = document.querySelector(".fill-color");
 const fillColor = document.querySelector("#fill-color");
 const sizeSlider = document.querySelector("#size-slider");
 const colorBtns = document.querySelectorAll(".row-colors .option");
@@ -189,7 +190,20 @@ toolBtns.forEach((btn) => {
     document.querySelector(".options .active").classList.remove("active");
     btn.classList.add("active");
     selectedTool = btn.id;
+    if (selectedTool === "brush" || selectedTool === "eraser") {
+      fillColor.checked = false;
+      document.querySelector(".fill-color span").style.color = "#fff";
+    }
   });
+});
+fillColorLi.addEventListener("click", () => {
+  if (selectedTool === "brush" || selectedTool === "eraser")
+    return (fillColor.checked = false);
+  if (fillColor.checked) {
+    document.querySelector(".fill-color span").style.color = "#4a98f7";
+  } else {
+    document.querySelector(".fill-color span").style.color = "#fff";
+  }
 });
 colorBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
