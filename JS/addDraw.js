@@ -176,6 +176,6 @@ clearCanvas.addEventListener("click", () => {
 });
 
 sizeSlider.addEventListener("change", () => (brushWidth = sizeSlider.value));
-canvas.addEventListener("mousedown", startDrawing);
-canvas.addEventListener("mousemove", drawing);
-canvas.addEventListener("mouseup", () => (isDrawing = false));
+canvas.addEventListener("pointerdown", startDrawing);
+canvas.addEventListener("pointermove", drawing);
+canvas.addEventListener("pointerup", () => (isDrawing = false));
