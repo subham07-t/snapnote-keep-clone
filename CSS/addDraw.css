@@ -165,4 +165,70 @@
   border-radius: 15px;
 }
 @media (max-width: 600px) {
+  .drawbox-popup {
+    width: 100%;
+    height: 100%;
+  }
+  .drawbox-popup section {
+    flex-direction: column-reverse;
+    height: 100%;
+  }
+  .canvas {
+    height: 100%;
+  }
+  .tools-board {
+    flex-direction: column;
+    width: unset;
+  }
+  .row-shapes,
+  .row-options,
+  .row-colors,
+  .row-buttons {
+    display: flex;
+    /* align-items: stretch; */
+  }
+  .row-shapes {
+    justify-content: center;
+  }
+  .row-shapes ul.options {
+    justify-content: space-around;
+    width: 100%;
+  }
+  .row-shapes label {
+    display: none;
+  }
+  .row-shapes li.option.tool:last-child label {
+    display: unset;
+  }
+  .row-options {
+    justify-content: center;
+  }
+  .row-options ul.options {
+    justify-content: space-around;
+    width: 100%;
+  }
+  .row-options label {
+    display: none;
+  }
+  .row-colors {
+    justify-content: center;
+  }
+  .row-colors ul.options {
+    justify-content: space-around;
+    width: 100%;
+  }
+  .row-colors label {
+    display: none;
+  }
+  div.row-shapes ul.options li.option.tool > span {
+    display: none;
+  }
+  .options {
+    display: flex;
+  }
+  .row-shapes,
+  .row-options,
+  .row-colors {
+    padding: 0px;
+  }
 }
