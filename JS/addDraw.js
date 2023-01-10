@@ -89,6 +89,7 @@ const drawTriangle = (e) => {
 };
 
 const startDrawing = (e) => {
+  console.log(e.type);
   isDrawing = true;
   prevMouseX = e.offsetX;
   prevMouseY = e.offsetY;
@@ -176,6 +177,9 @@ clearCanvas.addEventListener("click", () => {
 });
 
 sizeSlider.addEventListener("change", () => (brushWidth = sizeSlider.value));
-canvas.addEventListener("mousedown touchstart", startDrawing);
-canvas.addEventListener("touchmove mousemove", drawing);
-canvas.addEventListener("touchend mouseup", () => (isDrawing = false));
+canvas.addEventListener("mousedown", startDrawing);
+canvas.addEventListener("mousemove", drawing);
+canvas.addEventListener("mouseup", () => (isDrawing = false));
+canvas.addEventListener("touchstart", startDrawing);
+canvas.addEventListener("touchmove", drawing);
+canvas.addEventListener("touchend", () => (isDrawing = false));
