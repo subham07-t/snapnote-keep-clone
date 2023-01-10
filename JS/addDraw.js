@@ -32,10 +32,13 @@ const colorPicker = document.querySelector("#color-picker");
 const clearCanvas = document.querySelector(".clear-canvas");
 const addImg = document.querySelector(".add-img");
 const ctx = canvas.getContext("2d");
+const mobileCanvas = canvas.getBoundingClientRect();
 
 let isDrawing = false,
   prevMouseX,
   prevMouseY,
+  prevTouchX,
+  prevTouchY,
   snapshot,
   brushWidth = 5,
   selectedTool = "brush",
@@ -62,6 +65,7 @@ const drawRect = (e) => {
       prevMouseY - e.offsetY
     );
   }
+
   ctx.fillRect(
     e.offsetX,
     e.offsetY,
@@ -70,12 +74,37 @@ const drawRect = (e) => {
   );
 };
 
+const drawMobileRect = (e) => {
+  if (!fillColor.checked) {
+    return ctx.strokeRect(
+      e.targetTouches[0].pageX - mobileCanvas.left,
+      e.targetTouches[0].pageY - mobileCanvas.top,
+      prevTouchX - e.targetTouches[0].pageX,
+      prevTouchY - e.targetTouches[0].pageY
+    );
+  }
+  ctx.fillRect(
+    e.targetTouches[0].pageX - mobileCanvas.left,
+    e.targetTouches[0].pageY - mobileCanvas.top,
+    prevTouchX - e.targetTouches[0].pageX,
+    prevTouchY - e.targetTouches[0].pageY
+  );
+};
 const drawCircle = (e) => {
   ctx.beginPath();
   let radius = Math.sqrt(
     Math.pow(prevMouseX - e.offsetX, 2) + Math.pow(prevMouseY - e.offsetY, 2)
   );
   ctx.arc(prevMouseX, prevMouseY, radius, 0, 2 * Math.PI);
+  fillColor.checked ? ctx.fill() : ctx.stroke();
+};
+const drawMobileCircle = (e) => {
+  ctx.beginPath();
+  let radius = Math.sqrt(
+    Math.pow(prevTouchX - e.targetTouches[0].pageX, 2) +
+      Math.pow(prevTouchY - e.targetTouches[0].pageY, 2)
+  );
+  ctx.arc(prevTouchX, prevTouchY, radius, 0, 2 * Math.PI);
   fillColor.checked ? ctx.fill() : ctx.stroke();
 };
 
@@ -87,12 +116,35 @@ const drawTriangle = (e) => {
   ctx.closePath();
   fillColor.checked ? ctx.fill() : ctx.stroke();
 };
+const drawMobileTriangle = (e) => {
+  ctx.beginPath();
+  ctx.moveTo(prevTouchX, prevTouchY);
+  ctx.lineTo(
+    e.targetTouches[0].pageX - mobileCanvas.left,
+    e.targetTouches[0].pageY - mobileCanvas.top
+  );
+  ctx.lineTo(
+    prevTouchX * 2 - e.targetTouches[0].pageX - mobileCanvas.left,
+    e.targetTouches[0].pageY - mobileCanvas.top
+  );
+  ctx.closePath();
+  fillColor.checked ? ctx.fill() : ctx.stroke();
+};
 
 const startDrawing = (e) => {
-  console.log(e.type);
   isDrawing = true;
   prevMouseX = e.offsetX;
   prevMouseY = e.offsetY;
+  ctx.beginPath();
+  ctx.lineWidth = brushWidth;
+  ctx.strokeStyle = selectedColor;
+  ctx.fillStyle = selectedColor;
+  snapshot = ctx.getImageData(0, 0, canvas.width, canvas.height);
+};
+const startMobileDrawing = (e) => {
+  isDrawing = true;
+  prevTouchX = e.targetTouches[0].pageX - mobileCanvas.left;
+  prevTouchY = e.targetTouches[0].pageY - mobileCanvas.top;
   ctx.beginPath();
   ctx.lineWidth = brushWidth;
   ctx.strokeStyle = selectedColor;
@@ -112,6 +164,24 @@ const drawing = (e) => {
     drawCircle(e);
   } else {
     drawTriangle(e);
+  }
+};
+const mobileDrawing = (e) => {
+  if (!isDrawing) return;
+  ctx.putImageData(snapshot, 0, 0);
+  if (selectedTool === "brush" || selectedTool === "eraser") {
+    ctx.strokeStyle = selectedTool === "eraser" ? "#fff" : selectedColor;
+    ctx.lineTo(
+      e.targetTouches[0].pageX - mobileCanvas.left,
+      e.targetTouches[0].pageY - mobileCanvas.top
+    );
+    ctx.stroke();
+  } else if (selectedTool === "rectangle") {
+    drawMobileRect(e);
+  } else if (selectedTool === "circle") {
+    drawMobileCircle(e);
+  } else {
+    drawMobileTriangle(e);
   }
 };
 toolBtns.forEach((btn) => {
@@ -180,6 +250,6 @@ sizeSlider.addEventListener("change", () => (brushWidth = sizeSlider.value));
 canvas.addEventListener("mousedown", startDrawing);
 canvas.addEventListener("mousemove", drawing);
 canvas.addEventListener("mouseup", () => (isDrawing = false));
-canvas.addEventListener("touchstart", startDrawing);
-canvas.addEventListener("touchmove", drawing);
+canvas.addEventListener("touchstart", startMobileDrawing);
+canvas.addEventListener("touchmove", mobileDrawing);
 canvas.addEventListener("touchend", () => (isDrawing = false));
