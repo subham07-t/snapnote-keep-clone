@@ -1,7 +1,7 @@
 .add-box2 {
   padding: 15px 10px;
   width: 50%;
-  border: 2px solid #5f6368;
+  border: 2px solid var(--border-color);
   border-radius: 25px;
   display: flex;
   flex-direction: column;
@@ -25,7 +25,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border: 2px solid #5f6368;
+  border: 2px solid var(--border-color);
   width: calc(100% - 500px);
   height: calc(100% - 150px);
   z-index: 3;
@@ -122,7 +122,7 @@
 .row-buttons button {
   padding: 5px 5px;
   width: 50%;
-  border: 2px solid #5f6368;
+  border: 2px solid var(--border-color);
   border-radius: 25px;
   display: flex;
   justify-content: center;

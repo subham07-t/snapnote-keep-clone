@@ -1,12 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
+:root {
+  --font-base: "Inter", sans-serif;
+  --base-color: #202124;
+  --border-color: #5f6368;
+
+  --nav-logo-size: 22px;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #202124;
+  background-color: var(--base-color);
   color: white;
-  font-family: "Inter", sans-serif;
+  font-family: var(--font-base);
 }
 body::-webkit-scrollbar {
   width: 0.5em;
@@ -21,8 +29,8 @@ body::-webkit-scrollbar-thumb {
   border-radius: 1rem;
 }
 .navbar {
-  background-color: #202124;
-  border-bottom: 1px solid #5f6368;
+  background-color: var(--base-color);
+  border-bottom: 1px solid var(--border-color);
   /* height: 60px; */
   display: flex;
   justify-content: space-between;
@@ -39,7 +47,7 @@ body::-webkit-scrollbar-thumb {
   width: 15%;
 }
 .navbar-logo h3 {
-  font-size: 22px;
+  font-size: var(--nav-logo-size);
 }
 .footer-account {
   display: flex;
@@ -82,7 +90,6 @@ footer .footer-account p {
 }
 .main {
   display: flex;
-  /* border: 2px solid #5f6368; */
 }
 @media (max-width: 600px) {
   .main {

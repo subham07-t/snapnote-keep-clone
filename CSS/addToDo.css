@@ -1,9 +1,8 @@
 .sidebar-bot {
   margin-top: 15px;
-  /* border: 2px solid #5f6368; */
 }
 .todo {
-  border: 2px solid #5f6368;
+  border: 2px solid var(--border-color);
   border-radius: 25px;
   padding: 40px 20px;
   height: 550px;
@@ -25,7 +24,7 @@
 }
 .task-input input {
   outline: none;
-  border: 1px solid #5f6368;
+  border: 1px solid var(--border-color);
   border-radius: 8px;
   width: 100%;
   padding: 8px 2.5rem;
@@ -71,8 +70,6 @@
 }
 .task-box li {
   list-style: none;
-  /* border: 2px solid #5f6368; */
-  /* cursor: pointer; */
 }
 .task {
   display: flex;
@@ -106,7 +103,7 @@ label input[type="checkbox"] {
 }
 
 .menu-todo {
-  border: 1px solid #5f6368;
+  border: 1px solid var(--border-color);
   list-style: none;
   padding: 8px 16px;
   width: 100px;
@@ -142,7 +139,6 @@ label input[type="checkbox"] {
   justify-content: center;
   align-items: center;
   gap: 3px;
-  /* border: 2px solid #5f6368; */
 }
 .empty {
   color: #757d86;
