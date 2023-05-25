@@ -20,7 +20,7 @@
 }
 .task-input i {
   position: absolute;
-  transform: translateX(-130px);
+  transform: translateX(-120px);
 }
 .task-input input {
   outline: none;
