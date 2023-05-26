@@ -18,17 +18,10 @@ Clone the project
 Go to the project directory
 
 ```sh
-  cd KeepClone
-```
-
-Install dependencies
-
-```sh
-  npm install
+  cd snapnote-keep-clone
 ```
 
 Start the Project on browser
-
 
 
 ## Tools used
