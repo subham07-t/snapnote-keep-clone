@@ -12,7 +12,7 @@ SnapNote is a versatile and user-friendly application that allows you to effortl
 Clone the project
 
 ```sh
-  https://github.com/subham07-t/snap-note.git
+  https://github.com/subham07-t/snapnote-keep-clone.git
 ```
 
 Go to the project directory
