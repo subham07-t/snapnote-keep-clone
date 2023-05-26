@@ -1,10 +1,10 @@
 
-# Welcome to KeepClone 👋
+# Welcome to SnapNote 👋
 
-KeepClone is a versatile and user-friendly application that allows you to effortlessly manage your notes, to-do lists, and drawings in one centralized location. Inspired by the popular Google Keep, KeepClone offers a seamless and intuitive experience for organizing your thoughts, tasks, and creative expressions.
+SnapNote is a versatile and user-friendly application that allows you to effortlessly manage your notes, to-do lists, and drawings in one centralized location. Inspired by the popular Google Keep, SnapNote offers a seamless and intuitive experience for organizing your thoughts, tasks, and creative expressions.
 
 
-### ✨ [Demo](https://keep-clone-pi.vercel.app/)
+### ✨ [Demo](https://snapnote.vercel.app/)
 
 
 ## Run Locally
@@ -12,7 +12,7 @@ KeepClone is a versatile and user-friendly application that allows you to effort
 Clone the project
 
 ```sh
-  git clone https://github.com/subham07-t/KeepClone.git
+  https://github.com/subham07-t/snap-note.git
 ```
 
 Go to the project directory
