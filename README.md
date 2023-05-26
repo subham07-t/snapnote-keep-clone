@@ -12,7 +12,7 @@ KeepClone is a versatile and user-friendly application that allows you to effort
 Clone the project
 
 ```sh
-  git clone https://github.com/subham07-t/KeepClone.git
+  https://github.com/subham07-t/keep-clone.git
 ```
 
 Go to the project directory
