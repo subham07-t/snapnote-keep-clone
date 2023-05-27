@@ -145,7 +145,7 @@ form button {
 form button:hover {
   background-color: var(--border-color);
 }
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .sidebar {
     width: 100%;
   }
@@ -169,5 +169,11 @@ form button:hover {
   }
   .data-box img {
     height: 80%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .sidebar {
+    width: 50%;
   }
 }

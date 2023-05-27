@@ -40,7 +40,7 @@ body::-webkit-scrollbar-thumb {
 
 .navbar-logo {
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
 }
 .navbar-logo img {
@@ -105,5 +105,11 @@ footer .footer-account p {
   }
   .account-info {
     width: 300px;
+  }
+}
+
+@media (max-width: 375px) {
+  footer .footer-account p {
+    width: 50%;
   }
 }

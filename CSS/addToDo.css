@@ -30,6 +30,11 @@
   padding: 8px 2.5rem;
   height: 50px;
 }
+.error-msg {
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+}
 .controls {
   display: flex;
   justify-content: space-between;
@@ -119,6 +124,9 @@ label input[type="checkbox"] {
   transition: transform 0.2s ease;
   transform-origin: bottom right;
 }
+.exceeded-limit {
+  border-color: red;
+}
 .menu-todo li {
   display: flex;
   gap: 8px;
@@ -146,5 +154,38 @@ label input[type="checkbox"] {
 @media (max-width: 600px) {
   .todo {
     height: 300px;
+  }
+}
+
+@media (max-width: 320px) {
+  .task-input i {
+    transform: translateX(-100px);
+  }
+  .controls {
+    font-size: 0.8rem;
+  }
+  .task label p {
+    font-size: 0.8rem;
+  }
+}
+
+@media (min-width: 376px) and (max-width: 426px) {
+  .task-input i {
+    transform: translateX(-150px);
+  }
+}
+@media (min-width: 427px) and (max-width: 768px) {
+  .task-input i {
+    transform: translateX(-130px);
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .task-input i {
+    transform: translateX(-140px);
+  }
+}
+@media (min-width: 1441px) and (max-width: 2560px) {
+  .task-input i {
+    transform: translateX(-260px);
   }
 }

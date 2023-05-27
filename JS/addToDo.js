@@ -7,6 +7,8 @@ const filters = document.querySelectorAll(".filters span");
 // clear button
 const clearAll = document.querySelector(".clear");
 
+const errorMsg = document.getElementById("error-msg");
+
 // todo array & variables declaring
 let todos = JSON.parse(localStorage.getItem("todo-list"));
 let isTaskUpdate = false,
@@ -15,10 +17,25 @@ let isTaskUpdate = false,
 // calling the todos for render when screen loading
 showTodos(trackStatus);
 
+function isExceed(wordCount) {
+  const isExceeded = wordCount > 20;
+  return isExceeded;
+}
+
+taskInput.addEventListener("input", () => {
+  const text = taskInput.value;
+  if (isExceed(text.length)) {
+    // taskInput.classList.add("error");
+    errorMsg.textContent = "More than 20 words";
+  } else {
+    errorMsg.textContent = "";
+  }
+});
+
 // event for iput value storing in todo
 taskInput.addEventListener("keyup", (e) => {
   let task = taskInput.value.trim();
-  if (e.key == "Enter" && task) {
+  if (e.key == "Enter" && task && !isExceed(task.length)) {
     if (!todos) {
       todos = [];
     }
@@ -106,7 +123,6 @@ function showTodoMenu(selectedTask) {
 function deleteTask(id, btnId) {
   todos.splice(id, 1);
   localStorage.setItem("todo-list", JSON.stringify(todos));
-  console.log(btnId);
   showTodos(btnId);
 }
 
@@ -142,6 +158,7 @@ filters.forEach((btn) => {
 
 // clear all button functionality
 clearAll.addEventListener("click", () => {
+  errorMsg.textContent = "";
   todos.splice(0, todos.length);
   taskInput.value = "";
   localStorage.setItem("todo-list", JSON.stringify(todos));
