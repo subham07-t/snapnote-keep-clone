@@ -18,10 +18,22 @@
   align-items: center;
   justify-content: center;
 }
+
+.task-input {
+  position: relative;
+}
+
+.task-input input[type="text"] {
+  padding-left: 40px;
+}
+
 .task-input i {
   position: absolute;
-  transform: translateX(-120px);
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
 }
+
 .task-input input {
   outline: none;
   border: 1px solid var(--border-color);
@@ -158,34 +170,10 @@ label input[type="checkbox"] {
 }
 
 @media (max-width: 320px) {
-  .task-input i {
-    transform: translateX(-100px);
-  }
   .controls {
     font-size: 0.8rem;
   }
   .task label p {
     font-size: 0.8rem;
-  }
-}
-
-@media (min-width: 376px) and (max-width: 426px) {
-  .task-input i {
-    transform: translateX(-150px);
-  }
-}
-@media (min-width: 427px) and (max-width: 768px) {
-  .task-input i {
-    transform: translateX(-130px);
-  }
-}
-@media (min-width: 769px) and (max-width: 1024px) {
-  .task-input i {
-    transform: translateX(-140px);
-  }
-}
-@media (min-width: 1480px) and (max-width: 2560px) {
-  .task-input i {
-    transform: translateX(-260px);
   }
 }
