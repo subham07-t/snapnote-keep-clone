@@ -10,9 +10,11 @@
   gap: 8px;
   cursor: pointer;
 }
+
 .add-box2 p {
   text-align: center;
 }
+
 .canvas-popup-box {
   background-color: rgba(0, 0, 0, 0.4);
   position: fixed;
@@ -23,22 +25,27 @@
   top: 0;
   left: 0;
 }
+
 .drawbox-popup {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  /* top: 50%; */
+  /* left: 50%; */
+  /* transform: translate(-50%, -50%); */
+  /* width: calc(100% - 500px);
+  height: calc(100% - 150px); */
+  width: 100%;
+  height: 100%;
   border: 2px solid var(--border-color);
-  width: calc(100% - 500px);
-  height: calc(100% - 150px);
   z-index: 3;
   transition: all 0.2s ease;
   display: flex;
   flex-direction: column;
 }
+
 .drawbox-popup header i {
   cursor: pointer;
 }
+
 .drawbox-popup header {
   display: flex;
   justify-content: space-between;
@@ -46,33 +53,39 @@
   padding: 20px 20px;
   /* margin: 10px 10px 0 10px; */
 }
+
 .drawbox-popup section {
   display: flex;
   width: 100%;
   flex: 1;
 }
+
 .canvas-popup-box,
 .drawbox-popup {
   opacity: 0;
   pointer-events: none;
   transition: all 0s ease;
 }
+
 .tools-board {
   width: 25%;
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   justify-content: space-around;
 }
+
 .row-shapes,
 .row-options,
 .row-colors,
 .row-buttons {
   padding: 10px;
 }
+
 .row-colors ul {
   display: flex;
   justify-content: space-between;
 }
+
 .row-colors .option {
   height: 20px;
   width: 20px;
@@ -80,18 +93,23 @@
   margin-top: 3px;
   position: relative;
 }
+
 .row-colors .option:nth-child(1) {
   background-color: #000;
 }
+
 .row-colors .option:nth-child(2) {
   background-color: #e02020;
 }
+
 .row-colors .option:nth-child(3) {
   background-color: #6dd400;
 }
+
 .row-colors .option:nth-child(4) {
   background-color: #4a98f7;
 }
+
 .row-colors .option.selected::before {
   position: absolute;
   content: "";
@@ -104,24 +122,30 @@
   border: 2px solid #fff;
   transform: translate(-50%, -50%);
 }
+
 .row-colors .option:first-child.selected::before {
   border-color: #ccc;
 }
+
 .option #color-picker {
   opacity: 0;
   cursor: pointer;
 }
+
 .option:is(:hover, .active) :where(span) {
   color: #4a98f7;
 }
+
 .option:is(:hover, .active) :where(i) {
   color: #4a98f7;
 }
+
 .row-buttons {
   display: flex;
   justify-content: space-around;
   gap: 3px;
 }
+
 .row-buttons button {
   padding: 5px 5px;
   width: 50%;
@@ -132,10 +156,12 @@
   align-items: center;
   cursor: pointer;
 }
+
 .options {
   list-style: none;
   padding: 10px;
 }
+
 .option,
 .fill-color {
   padding: 10px;
@@ -144,47 +170,58 @@
   gap: 8px;
   cursor: pointer;
 }
+
 .option #fill-color {
   width: 14px;
   height: 14px;
 }
+
 .option #size-slider {
   width: 100%;
   height: 4px;
   margin-top: 10px;
 }
+
 .fa-play {
   transform: rotate(32deg);
 }
+
 .canvas {
   background-color: #fff;
   width: 100%;
 }
+
 .canvas canvas {
   width: 100%;
   height: 100%;
   background-color: #fff;
   touch-action: none;
 }
+
 .data-box img {
   border-radius: 15px;
 }
+
 @media (max-width: 600px) {
   .drawbox-popup {
     width: 100%;
     height: 100%;
   }
+
   .drawbox-popup section {
     flex-direction: column-reverse;
     height: 100%;
   }
+
   .canvas {
     height: 100%;
   }
+
   .tools-board {
     flex-direction: column;
     width: unset;
   }
+
   .row-shapes,
   .row-options,
   .row-colors,
@@ -192,45 +229,58 @@
     display: flex;
     /* align-items: stretch; */
   }
+
   .row-shapes {
     justify-content: center;
   }
+
   .row-shapes ul.options {
     justify-content: space-around;
     width: 100%;
   }
+
   .row-shapes label {
     display: none;
   }
+
   div.row-shapes ul.options li.option.tool:last-child span {
     display: unset;
   }
+
   .row-options {
     justify-content: center;
   }
+
   .row-options ul.options {
     justify-content: space-around;
     width: 100%;
   }
+
   .row-options label {
     display: none;
   }
+
   .row-colors {
     justify-content: center;
   }
+
   .row-colors ul.options {
     justify-content: space-around;
     width: 100%;
   }
+
   .row-colors label {
     display: none;
   }
-  div.row-shapes ul.options li.option.tool > span {
+
+  div.row-shapes ul.options li.option.tool>span {
     display: none;
   }
+
   .options {
     display: flex;
   }
+
   .row-shapes,
   .row-options,
   .row-colors {
