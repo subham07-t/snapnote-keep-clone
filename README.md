@@ -22,32 +22,27 @@ Go to the project directory
   cd snapnote-keep-clone
 ```
 
-Start the Project on browser
+
+
+> Start the Project on browser
 
 
 ## Tools used
 
-- HTML
-- CSS
-- JS
+- **HTML**
+- **CSS**
+- **JS**
 
 ## Features
 
-- User can store note with it's title and desc. Can edit & delete the note also.
-- User can create own to-do list.Can check the pending task,completed task & also can edit and update the task.
-- User can draw any thing with there own preferred color and can store it.Can resize the brush and also can erase the drawing.It's also have the update & delete functionality.
-  
-## Lessons Learned
-
-- How to use the Local storage.
-- How to use JS Canvas.
-- How to use CRUD.
+- [x] Users can store, edit, and delete notes with titles and descriptions, as well as create, manage, and update their own to-do lists with pending and completed tasks.
+- [x] Users can create and save drawings in their preferred colors, resize the brush, erase mistakes, and update or delete their drawings.
 
 
 ## Author
 
-👤 ** Subham haldar  **
+👤 **Subham haldar**
 
-* Github: [@Subham07-t   ](https://github.com/Subham07-t   )
+* Github: [@Subham07-t](https://github.com/Subham07-t   )
 * LinkedIn: https://linkedin.com/in/subham-haldar
 
